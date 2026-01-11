@@ -130,7 +130,7 @@ $students = $manager->getAllStudents();
 
                 <?php if(empty($students)): ?>
                   <tr>
-                    <td colspan="5" class="text-center py-6 text-sm gray-500">
+                    <td colspan="5" class="text-center py-6 text-sm text-gray-500">
                         No Students found
                     </td>
                   </tr>

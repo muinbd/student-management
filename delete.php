@@ -1,20 +1,13 @@
 <?php
-
-require_once ('classes/StudentManager.php');
+require_once 'classes/StudentManager.php';
 
 $manager = new StudentManager();
 
-// Get ID from URL
 $id = $_GET['id'] ?? null;
 
-if(!$id) {
-    die('Invalid Student ID');
+if (!empty($id)) {
+    $manager->delete($id);
 }
 
-// Delete the student
-$manager->delete($id);
-
-// Redirect back to list
 header('Location: index.php');
 exit;
-
