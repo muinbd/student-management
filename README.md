@@ -1,5 +1,6 @@
 # Assignment : 01
 
-### Name : Your Name
-### Email : Your Course Email
+### Name : Muin Chowdhury
+### Email : muin.bd@gmail.com
+
 
