@@ -34,7 +34,7 @@ $students = $manager->getAllStudents();
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <span class="text-white font-bold text-xl tracking-tight"
-                  >STUDENT.IO</span
+                  ><a href="index.php">STUDENT.IO</a></span
                 >
               </div>
             </div>
