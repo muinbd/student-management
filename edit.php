@@ -164,16 +164,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             >Enrollment Status</label
                             >
                             <div class="mt-2">
-                                <select name="status" class="mt-1 w-full rounded-md border p-2">
-                                    <?php
-                                    $statuses = ['Active', 'On Leave', 'Graduated', 'Inactive'];
-                                    foreach ($statuses as $status):
-                                        ?>
-                                        <option <?= $student['status'] === $status ? 'selected' : '' ?>>
-                                            <?= $status ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <label>
+                                    <select name="status" class="mt-1 w-full rounded-md border p-2">
+                                        <?php
+                                        $statuses = ['Active', 'On Leave', 'Graduated', 'Inactive'];
+                                        foreach ($statuses as $status):
+                                            ?>
+                                            <option <?= $student['status'] === $status ? 'selected' : '' ?>>
+                                                <?= $status ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </label>
 
                             </div>
                         </div>
