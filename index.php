@@ -119,9 +119,11 @@ $students = $manager->getAllStudents();
                     >
                       Status
                     </th>
-                    <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
-                      <span class="sr-only">Actions</span>
-                    </th>
+                    <th scope="col"
+    class="relative py-3.5 pl-3 pr-4 text-right text-sm font-semibold text-gray-900 sm:pr-0">
+  Actions
+</th>
+
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
@@ -134,20 +136,30 @@ $students = $manager->getAllStudents();
                   </tr>
                 <?php endif; ?>
 
-                <?php foreach ($students as $student): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($student['name']) ?></td>
-                        <td><?= htmlspecialchars($student['email']) ?></td>
-                        <td><?= htmlspecialchars($student['phone']) ?></td>
-                        <td><?= htmlspecialchars($student['status']) ?></td>
+               <?php foreach ($students as $student): ?>
 
-                        <td class="text-right">
-                            <a href="edit.php?id=<?= $student['id'] ?>" class="text-indigo-600 mr-4">Edit</a>
-                            <a href="delete.php?id=<?= $student['id'] ?>" class="text-red-600" onlick="return confirm('Are you sure?'")>Delete</a>
-                        </td>
+  <?php if (!is_array($student) || !isset($student['id'])) continue; ?>
 
-                    </tr>
-                <?php endforeach; ?>
+  <tr>
+    <td><?= htmlspecialchars($student['name']) ?></td>
+    <td><?= htmlspecialchars($student['email']) ?></td>
+    <td><?= htmlspecialchars($student['phone']) ?></td>
+    <td><?= htmlspecialchars($student['status']) ?></td>
+    <td class="text-right">
+      <a href="edit.php?id=<?= $student['id'] ?>" class="text-indigo-600 mr-4">
+        Edit
+      </a>
+      <a href="delete.php?id=<?= $student['id'] ?>"
+   class="text-red-600"
+   onclick="return confirm('Are you sure you want to delete this student?');">
+   Delete
+</a>
+
+    </td>
+  </tr>
+
+<?php endforeach; ?>
+
                 </tbody>
               </table>
             </div>

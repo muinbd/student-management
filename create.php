@@ -9,6 +9,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die('Invalid email address');
     }
 
+    if (
+    empty($_POST['name']) ||
+    empty($_POST['email']) ||
+    empty($_POST['phone']) ||
+    empty($_POST['status'])
+) {
+    die('All fields are required');
+}
+
+
     $manager->create([
             'id' => time(), // unique ID
         'name' => $_POST['name'],
